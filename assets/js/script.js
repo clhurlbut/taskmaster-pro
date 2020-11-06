@@ -35,7 +35,7 @@ var loadTasks = function() {
 
   // loop over object properties
   $.each(tasks, function (list, arr) {
-    console.log(list, arr);
+    
     // then loop over sub-array
     arr.forEach(function (task) {
       createTask(task.text, task.date, list);
@@ -52,7 +52,7 @@ $(".list-group").on("click", "p", function () {
   var textInput = $("<textarea>").addClass("form-control").val(text);
   $(this).replaceWith(textInput);
   textInput.trigger("focus");
-  console.log(text);
+  
 });
 
 //due date was clicked 
@@ -195,16 +195,16 @@ $(".card .list-group").sortable({
   tolerance: "pointer",
   helper: "clone",
   activate: function (event) {
-    console.log("activate", this);
+    
   },
   deactivate: function (event) {
-    console.log("deactivate", this);
+    
   },
   over: function (event) {
-    console.log("over", event.target);
+   
   },
   out: function (event) {
-    console.log("out", event.target);
+    
   },
   update: function (event) {
     // array to store the task data in
@@ -244,14 +244,14 @@ $("#trash").droppable({
   accept: ".card .list-group-item",
   tolerance: "touch",
   drop: function(event, ui) {
-    console.log("drop");
+    
     ui.draggable.remove();
   },
   over: function(event, ui) {
-    console.log("over");
+    
   },
   out: function(event, ui) {
-    console.log("out");
+    
   }
 });
 
